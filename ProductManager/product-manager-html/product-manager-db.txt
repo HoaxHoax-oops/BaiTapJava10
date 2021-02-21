@@ -1,0 +1,15 @@
+use product_manager;
+
+CREATE TABLE categories(
+	id INT NOT NULL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE products(
+    id INT NOT NULL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL,
+    price FLOAT NOT NULL,
+    cate_id INT NOT NULL,
+    FOREIGN KEY (cate_id) REFERENCES categories(id)
+);
